@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&family=Lora&display=swap');
+
+$family-sans-serif: "Inter", "Lora", "Nunito", sans-serif;
+$family-primary: $family-sans-serif;
+
+
+$beige-lighter: #EFF0EB;
+$body-background-color: $beige-lighter;
+
+.card {
+    background: linear-gradient(15deg, tan 0%, white 0%, tan 100%);
+    border: 2px solid brown;
+}
+
+.columns {
+    font-weight: bold;
+}
+
+label {
+    font-weight: bold;
+}
+
+#map {
+    height: 500px;
+}
+
+
+
+@import "../../../node_modules/bulma/bulma.sass";
