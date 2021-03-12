@@ -7,7 +7,7 @@ function mapInit() {
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoiZ3JpZmZpbjEwNCIsImEiOiJja20xeDgzNzEwY2tiMnZwaWJtYjI5aDMyIn0.s7LL5rA1pRQVxasgzgsFIw'
+    accessToken: 'pk.eyJ1IjoiZ3JpZmZpbjEwNCIsImEiOiJja201aTVld3QwZWxzMnB1czIyNDUwczYyIn0.wICvvJD8i_LEg03TP0qgtA'
 }).addTo(map);
   return map;
 }
@@ -15,6 +15,7 @@ function mapInit() {
 async function dataHandler(mapObjectFromFunction) {
   const search = document.querySelector('#search');
   const filteredList = document.querySelector('#filteredList')
+  const submitbutton = document.querySelector('#submit-button')
 
   let filteredPlaces = [];
 
@@ -41,7 +42,7 @@ async function dataHandler(mapObjectFromFunction) {
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
-    accessToken: 'pk.eyJ1IjoiZ3JpZmZpbjEwNCIsImEiOiJja20xeDgzNzEwY2tiMnZwaWJtYjI5aDMyIn0.s7LL5rA1pRQVxasgzgsFIw'
+    accessToken: 'pk.eyJ1IjoiZ3JpZmZpbjEwNCIsImEiOiJja201aTVld3QwZWxzMnB1czIyNDUwczYyIn0.wICvvJD8i_LEg03TP0qgtA'
     }).addTo(map);
     map.setView([filteredPlaces[0].geocoded_column_1.coordinates[1], filteredPlaces[0].geocoded_column_1.coordinates[0]], 13);
     L.marker([filteredPlaces[0].geocoded_column_1.coordinates[1], filteredPlaces[0].geocoded_column_1.coordinates[0]]).addTo(mapObjectFromFunction)
@@ -78,9 +79,7 @@ async function dataHandler(mapObjectFromFunction) {
     })
   }
 
-
-  search.addEventListener('change', displayMatches);
-  search.addEventListener('keyup', displayMatches);
+  submitbutton.addEventListener('click', displayMatches)
 }
 
 async function windowActions() {
